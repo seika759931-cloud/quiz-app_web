@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>クイズアプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ホーム画面 -->
+  <div id="home-screen" class="screen active">
+    <h1>クイズアプリ</h1>
+    <button id="start-button" onclick="startQuiz()" disabled>スタート</button>
+
+  </div>
+<!-- カテゴリ選択画面 -->
+<div id="category-screen" class="screen">
+  <h2>カテゴリ選択</h2>
+  <button onclick="selectCategory('t1')">人体の仕組みと働き</button>
+  <button onclick="selectCategory('t2')">栄養</button>
+  <button onclick="selectCategory('t3')">薬理</button>
+  <button onclick="selectCategory('t4')">疾病の成り立ち</button>
+  <button onclick="selectCategory('t5')">保健医療福祉の仕組み</button>
+  <button onclick="selectCategory('t6')">看護と法律</button>
+  <button onclick="selectCategory('t7')">基礎看護</button>
+  <button onclick="selectCategory('t8')">成人看護</button>
+  <button onclick="selectCategory('t9')">老年看護</button>
+  <button onclick="selectCategory('t10')">母子看護</button>
+  <button onclick="selectCategory('t11')">精神看護</button>
+  <button onclick="selectCategory('t12')">全ての問題をランダムに出題</button>
+</div>
+
+<!-- 出題数入力画面 -->
+<div id="count-screen" class="screen">
+  <label for="num-questions">出題数:</label>
+  <input type="number" id="num-questions" min="1" max="50">
+  <button onclick="startQuizWithCount()">開始</button>
+</div>
+<!-- 問題画面 -->
+<div id="question-screen" class="screen">
+  <p id="question-text"></p>
+  <div id="choices"></div>
+</div>
+<!-- 解説画面 -->
+<div id="explanation-screen" class="screen">
+  <p id="explanation-text"></p>
+  <button onclick="goNextFromExplanation()">次の問題へ</button>
+</div>
+
+<!-- 結果画面 -->
+<div id="result-screen" class="screen">
+  <p id="result-text"></p>
+  <p id="evaluation-text"></p>
+  <button onclick="showScreen('home-screen')">もう一度挑戦</button>
+</div>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
